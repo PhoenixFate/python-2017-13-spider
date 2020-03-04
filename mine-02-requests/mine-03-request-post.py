@@ -21,7 +21,7 @@ class WebFanyi:
         self.query_str = query_str
 
     def get_token_gtk(self):
-        '''获取token和gtk(用于合成Sign)'''
+        """获取token和gtk(用于合成Sign)"""
         self.session.get(self.root_url)
         resp = self.session.get(self.root_url)
         html_str = resp.content.decode()
@@ -43,7 +43,7 @@ class WebFanyi:
         return sign
 
     def lang_detect(self):
-        '''获取语言转换类型.eg: zh-->en'''
+        """获取语言转换类型.eg: zh-->en"""
         lang_resp = self.session.post(self.lang_url, data={"query": self.query_str})
         lang_json_str = lang_resp.content.decode()  # {"error":0,"msg":"success","lan":"zh"}
         lan = json.loads(lang_json_str)['lan']

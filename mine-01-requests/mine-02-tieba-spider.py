@@ -15,7 +15,7 @@ class TiebaSipder:
         #     url_list.append(self.url_temp.format(i * 50))
         # return url_list
         # !!!!!!!!!!!!!!!!!!!!!上面4句话的简写方式
-        return [self.url_temp.format(i*50) for i in range(10)]
+        return [self.url_temp.format(i*50) for i in range(5)]
 
     def parse_url(self, url):
         """发送请求，获取响应"""
